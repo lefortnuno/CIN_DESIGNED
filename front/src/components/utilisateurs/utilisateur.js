@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Header from "../../Header"
 
 export default function Utilisateur() {
   const handleClose = () => setShow(false);
@@ -106,6 +107,7 @@ export default function Utilisateur() {
   return (
     <>
       <div>
+        <Header />
         <h2>
           List Utilisateurs
           <span> </span>

@@ -4,33 +4,32 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Header from "../../Header"
 
 export default function Login() {
   const navigate = useNavigate();
-  const token = sessionStorage.getItem("token");
-  console.log("ton userToken = ", token);
 
-  {
-    /* SFONCTION A EXECUTER LORS DU CLIC ' SE-CONNECTER ' ----- () => SE CONNECTER ----- */
-  }
-
+  // FONCTION A EXECUTER LORS DU CLIC ' SE-CONNECTER ' ----- () => SE CONNECTER -----
   const [inputs, setInputs] = useState([]);
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  //ENVOYER DONNER FORMULAIRE AU BACK-END
   const onSubmit = (event) => {
     event.preventDefault();
     axios
       .post(`http://localhost:5010/api/utilisateur/seConnecter`, inputs)
       .then(function (response) {
         if (response.data.success && response.status === 200) {
-          // navigate("/utilisateur/"); // a decommenter si hiditr page hafa !
+          navigate("/utilisateur/"); // a decommenter si hiditr page hafa !
           toast.success(`Co Reussi`);
-          sessionStorage.setItem("token", response.data.token);
+          localStorage.setItem("userInfo", response.data.user);
+          localStorage.setItem("token", response.data.token);
+          // localStorage.removeItem("token");
+          console.log(response.data.token);
         } else {
           toast.error(`Co echec`);
         }
@@ -46,9 +45,7 @@ export default function Login() {
   return (
     <>
       <div className="container">
-        {token && token != "" && token != undefined ? (
-          "You ok, userToken: " + token
-        ) : (
+        <Header />
           <Form className="text-center border border-light p-5">
             <p className="h4 mb-4">Se Connecter</p>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -81,7 +78,6 @@ export default function Login() {
               Se Connecter
             </Button>
           </Form>
-        )}
       </div>
     </>
   );
