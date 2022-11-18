@@ -7,12 +7,12 @@ module.exports.checkUtilisateur = (req, res, next) => {
   if (token) {
     jwt.verify(token, `12nuno98Trofel56`, async (err, decodedToken) => {
       if (decodedToken) {
-        const dtok = decodedToken.id[0];
-        utilisateurModel.getIdUtilisateur(dtok.id, (err, resultat) => {
+        const dtok = decodedToken.numCompte[0];
+        utilisateurModel.getIdUtilisateur(dtok.numCompte, (err, resultat) => {
           if (resultat[0].attribut == "admin") {
             next();
           } else {
-            res.status(401).send({
+            res.status(403).send({
               message: `Vous etes un simple ${resultat[0].attribut} !`,
               success: false,
             });
