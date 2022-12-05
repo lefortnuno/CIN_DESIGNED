@@ -1,7 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+require('dotenv').config({path: "./config/.env"})
 
-const utilisateurRoute = require('./routes/utilisateur.route')
+const utilisateurRoute = require('./routes/u.route')
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -25,6 +26,6 @@ app.use( (req, res, next) => {
 
 app.use("/api/utilisateur", utilisateurRoute)
 
-app.listen(5010, () => {
-    console.log(`Ecoute au port 5010 ....`);
+app.listen((process.env.PORT || process.env.URL_HOST_IP), () => {
+    console.log(`Ecoute au port ${process.env.PORT} ....`);
 })
