@@ -1,0 +1,107 @@
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --base-color: #128afa;
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --green: #00ce4b;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --red-claire: #ff1616;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+.loginbox {
+  background: var(--grey);
+  box-sizing: border-box;
+  padding: 2% 3%;
+  box-shadow: 1px 0px 8px var(--light);
+  width: 100%;
+}
+
+.loginbox p {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: var(--base-color);
+}
+
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginbox input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid var(--dark);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: var(--dark);
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.loginbox input[type="text"]:focus,
+.loginbox input[type="password"]:focus {
+  background: transparent;
+  color: var(--dark);
+  pointer-events: none;
+  border-radius: 2px;
+  z-index: -1;
+  height: 46px;
+}
+
+.loginbox .btnOnSubmit {
+  border: none;
+  background: var(--base-color);
+  outline: none;
+  padding: 2%;
+  color: var(--light);
+  text-align: center;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.loginbox .btnOnSubmit:hover {
+  background: var(--green);
+}
+
+.loginbox .bienvenu {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark);
+  transition: 0.5s;
+}
+
+.nouveauCompte {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 2%;
+    color: var(--dark);
+  }
+  
+.loginbox .bienvenu:hover,
+.nouveauCompte:hover {
+  cursor: pointer;
+  color: var(--base-color);
+}
+
+
+@media (max-width: 400px) {
+  .loginbox {
+    width: 280px;
+    height: 380px;
+    padding: 70px 30px;
+  }
+}

@@ -1,0 +1,209 @@
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --base-color: #128afa;
+  --light: #f9f9f9;
+  --blue: #3c91e6;
+  --green: #00ce4b;
+  --green-claire: #00ce4b;
+  --grey: #eee;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #db504a;
+  --red-claire: #ff1616;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5% 2%;
+  background: var(--base-color);
+  color: var(--light);
+}
+.u-name {
+  font-size: 20px;
+  padding-left: 17px;
+}
+.u-name b {
+  color: var(--red-claire);
+}
+.header i {
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--light);
+}
+.header i:hover {
+  color: var(--dark);
+}
+.user-p {
+  text-align: center;
+  padding-left: 10px;
+  padding-top: 25px;
+}
+.user-p img {
+  width: 75px;
+  border-radius: 50%;
+}
+.user-p h4 {
+  color: var(--dark);
+  padding: 5px 0;
+}
+.side-bar {
+  width: 250px;
+  background: var(--light);
+  min-height: 100vh;
+  transition: 500ms width;
+}
+.body {
+  display: flex;
+}
+/* .myBody {
+      display: flex;
+  } */
+.section-1 {
+  width: 100%;
+  /* background: url("../img/bg.jpg"); */
+  background-color: var(--light);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+.side-bar {
+  background-color: var(--base-color);
+}
+.side-bar ul {
+  margin-top: 8%;
+  margin-left: -8%;
+  list-style: none;
+}
+.side-bar ul li {
+  font-size: 16px;
+  padding: 8% 1% 8% 0%;
+  transition: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--light);
+  text-overflow: ellipsis;
+}
+.side-bar ul li:hover {
+  background: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+}
+#navbtn {
+  display: inline-block;
+  margin-left: 70px;
+  font-size: 20px;
+  transition: 500ms color;
+}
+#checkbox {
+  display: none;
+}
+#checkbox:checked ~ .body .side-bar {
+  width: 60px;
+}
+#checkbox:checked ~ .body .side-bar .user-p {
+  visibility: hidden;
+}
+#checkbox:checked ~ .body .side-bar a span {
+  display: none;
+}
+
+/****************************************************************/
+.headerContenu,
+.middleContenu,
+.mainContenu {
+  width: 96%;
+  height: auto;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+}
+.headerContenu {
+  background-color: var(--grey);
+  box-shadow: 1px 1px 4px var(--light);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.headerContenu p {
+  margin: 2%;
+}
+.middleContenu {
+  margin-top: 5%;
+  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+}
+.middleContenu .titleSeConnecter {
+  display: flex;
+  justify-content: start;
+}
+
+.middleContenu .erreurMessage {
+  margin-top: -1%;
+  display: flex;
+  justify-content: center;
+}
+
+.middleContenu .rechercheInput {
+  width: 25%;
+}
+
+.middleContenuPage {
+  width: 96%;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 3%;
+  justify-content: start;
+  align-items: center;
+}
+  
+.middleContenuPage .videMiddlePage {
+  margin-left: 1%;
+  padding: 1%;
+}
+
+.mainContenu {
+  margin-left: 3%;
+  height: auto;
+  display: flex;
+}
+
+.mainContenu .logoFANJAKANA {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mainContenu .logoFANJAKANA img {
+  width: 100%;
+  height: auto;
+}
+.loginbox .mdp_edit_style{
+display: flex;
+}
+.loginbox .mdp_edit_style span{
+margin-right :2%;
+}
+@media (max-width: 700px) {
+  .mainContenu .logoFANJAKANA {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+}
